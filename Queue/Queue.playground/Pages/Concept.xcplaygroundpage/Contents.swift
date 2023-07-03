@@ -63,4 +63,3 @@ struct QueueStruct<T> {
         return array.count
     }
 }
-
