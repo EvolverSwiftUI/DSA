@@ -162,19 +162,41 @@ class BST {
         inOrderTraversal(node: root)
     }
     
-    func inOrderTraversal(node: Node?) {
+    private func inOrderTraversal(node: Node?) {
         guard let node = node else {
-            print("reached end 5")
             return
         }
-        print("1")
         inOrderTraversal(node: node.left)
-        print("2")
-        print("key: ",node.key)
-        print("3")
+        print(node.key)
         inOrderTraversal(node: node.right)
-        print("4")
     }
+    
+    func printPreOrderTraversal() {
+        preOrderTraversal(node: root)
+    }
+    
+    private func preOrderTraversal(node: Node?) {
+        guard let node = node else {
+            return
+        }
+        print(node.key)
+        preOrderTraversal(node: node.left)
+        preOrderTraversal(node: node.right)
+    }
+    
+    func printPostOrderTraversal() {
+        postOrderTraversal(node: root)
+    }
+    
+    private func postOrderTraversal(node: Node?) {
+        guard let node = node else {
+            return
+        }
+        postOrderTraversal(node: node.left)
+        postOrderTraversal(node: node.right)
+        print(node.key)
+   }
+
 }
 
 let bst = BST()
@@ -190,7 +212,9 @@ func insert1() {
     
     bst.prettyPrint()
     
-    bst.printInOrderTraversal()
+//    bst.printInOrderTraversal()
+//    bst.printPreOrderTraversal()
+    bst.printPostOrderTraversal()
 }
 
 
