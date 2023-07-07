@@ -9,5 +9,6 @@
         <page name='RemoveDuplicates_06'/>
         <page name='SubtreeChecker_07'/>
         <page name='MinStack_08'/>
+        <page name='Anagrams'/>
     </pages>
 </playground>
