@@ -2,11 +2,11 @@ import Foundation
 import XCTest
 
 /*
- Give a binary tree node, write a copy function that duplicates
- the right and left branches of the node.
+    InOrder Traversal of a Given Binary Tree.
 */
 
 class Node {
+    
     var data: Int
     var left: Node?
     var right: Node?
@@ -25,12 +25,22 @@ class Node {
         }
         return newNode
     }
+    
+    func inOrderTraversal(node: Node?) {
+        // L
+        // Root
+        // R
+        guard let node = node else { return }
+        inOrderTraversal(node: node.left) // L
+        print(node.data) // root          // Root
+        inOrderTraversal(node: node.right)// R
+    }
 }
 
 
 
 class Tests: XCTestCase {
-    
+
     func testCopy() {
         //          1
         //         / \
@@ -45,6 +55,9 @@ class Tests: XCTestCase {
         XCTAssertEqual(newCopy.data, node1.data)
         XCTAssertEqual(newCopy.left!.data, node1.left!.data)
         XCTAssertEqual(newCopy.right!.data, node1.right!.data)
+        
+        // print nodes inorder traversal
+        newCopy.inOrderTraversal(node: newCopy)
     }
     
     func testDeepCopy() {
@@ -81,6 +94,9 @@ class Tests: XCTestCase {
         
         // Copy should still point to old value - 8
         XCTAssertEqual(newCopy.right!.right!.data, 8)
+        
+        // print nodes inorder traversal
+        newCopy.inOrderTraversal(node: newCopy)
     }
 }
 
