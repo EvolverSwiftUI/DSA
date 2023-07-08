@@ -4,7 +4,7 @@ import Foundation
     Determine which elements intersect between two given arrays.
  */
 
-// O(n^m)
+// O(n^m) -> Quadratic
 func intersectBrute(_ A: [Int], _ B: [Int]) -> [Int] {
     var result: [Int] = []
     
@@ -22,7 +22,7 @@ func intersectBrute(_ A: [Int], _ B: [Int]) -> [Int] {
 intersectBrute([1, 2, 4, 5, 6], [2, 3, 5, 7]) // [2, 5]
 
 
-// O(n)
+// O(n) -> Linear
 func intersectByNSR(_ A: [Int], _ B: [Int]) -> [Int] {
     var result: [Int] = []
     
@@ -50,7 +50,7 @@ func intersect(_ A: [Int], _ B: [Int]) -> [Int] {
     var i = 0
     var j = 0
     
-    // O(n+m)
+    // O(n+m) -> Linear
     while i < A.count && j < B.count {
         if A[i] < B[j] {
             i += 1
